@@ -1,0 +1,224 @@
+/*=============== GLOBAL STYLES ===============*/
+
+:root {
+    /* Primary Colors */
+    --main-red: #FF002E;
+    --main-yellow: #FFD600;
+    --main-green: #00FF94;
+    --main-blue: #0FD4FF;
+
+    /* Secondary Colors */
+    --black-btn: #000D10;
+    --white-btn: #fff;
+    --hover-btn: #CDCDCD;
+
+
+    /* Font */
+    --body-font: "Arial", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: 1.6rem;
+    min-height: 100vh;
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 192.8rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+/*=============== HEADER ===============*/
+
+header {
+    background-color: var(--main-red);
+    padding: 6rem 1rem 2rem 1rem;
+}
+
+header .title-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 11rem;
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 4.8rem;
+}
+
+header div {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+header .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header button {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+    background: var(--black-btn);
+    color: var(--white-btn);
+}
+
+header button:nth-child(2) {
+    background: var(--white-btn);
+    color: var(--black-btn);
+}
+
+header button:hover,
+header button:focus {
+    background: var(--white-btn);
+    color: var(--black-btn);
+}
+
+header button:nth-child(2):hover,
+header button:nth-child(2):focus {
+    background: var(--hover-btn);
+    color: var(--black-btn);
+}
+
+
+/*=============== MAIN ===============*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.b-c {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/*=============== SECTION B ===============*/
+
+.b {
+    font-size: 4rem;
+}
+
+.b1 {
+    padding: 8rem 0;
+    background-color: var(--main-yellow);
+}
+
+.b-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.b-group div {
+    padding: 8rem 0;
+    flex: 1 1 calc(50% - 0.6rem);
+    background-color: var(--main-yellow);
+}
+
+/*=============== SECTION C ===============*/
+
+/* ===== Section C comes first in mobile ===== */
+.c {
+    background: var(--main-green);
+    padding: 18rem 0;
+    order: -1;
+
+    font-size: 6.4rem;
+}
+
+/*=============== SECTION D ===============*/
+
+.d {
+    background-color: var(--main-blue);
+    padding: 16rem;
+    font-size: 6.4rem;
+}
+
+/*=============== MEDIA QUERIES ===============*/
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    .b-group div {
+        flex: 1 1 calc(33.33% - 0.8rem);
+        /* Three columns in tablet */
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 14rem;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 6.4rem;
+    }
+
+    header .title-buttons {
+        gap: 4.8rem;
+    }
+
+    header .buttons {
+        flex-direction: row;
+    }
+
+    header .buttons button {
+        padding: 1rem 5rem;
+    }
+
+    header div {
+        justify-content: flex-start;
+    }
+
+    .b-c {
+        flex: 1;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .b {
+        width: 100%;
+    }
+
+    .b1 {
+        margin-bottom: 2rem;
+    }
+
+    .b-group div {
+        flex: 1 1 calc(25% - 1.2rem);
+        /* Four columns in desktop */
+    }
+
+    .c {
+        order: 1;
+        width: 100%;
+    }
+}
